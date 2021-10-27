@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Realize": {
+      "commandName": "Project",
+      "commandLineArgs": "--project-dir . --input-proj Syncfusion.Calculate.UWP_2017.csproj --replace-existing",
+      "workingDirectory": "D:\\d-repos\\Uno.Syncfusion\\Uno.Syncfusion\\19.3.0.43\\UWP\\Calculate.UWP\\Src"
+    }
+  }
+}
