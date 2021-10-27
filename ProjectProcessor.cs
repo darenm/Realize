@@ -53,7 +53,7 @@ namespace Realize
                     var linkPath = descendent.Descendants(linkXname).First().Value;
 
                     var source = Path.Combine(_inputProj.DirectoryName, filePath);
-                    var dest = Path.Combine(_inputProj.DirectoryName, linkPath);
+                    var destination = Path.Combine(_inputProj.DirectoryName, linkPath);
 
                     if (_isDryRun)
                     {
@@ -62,7 +62,8 @@ namespace Realize
                     else
                     {
                         Console.WriteLine($"Copying {filePath} to {linkPath}");
-                        File.Copy(source, dest, overwrite: true);
+                        FileUtils.CreateDirectoryPath(destination);
+                        File.Copy(source, destination, overwrite: true);
                         listOfElements.Add(new CompileItem { ActualElement = descendent, IncludePath= filePath, LinkPath = linkPath});
                     }
 

@@ -4,6 +4,17 @@
     {
         private static string numberPattern = " ({0})";
 
+        public static void CreateDirectoryPath(string filename)
+        {
+            var path = Path.GetDirectoryName(filename);
+            if (Directory.Exists(path))
+            {
+                return;
+            }
+
+            Directory.CreateDirectory(path);
+        }
+
         public static string NextAvailableFilename(string path)
         {
             // Short-cut if already available
